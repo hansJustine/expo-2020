@@ -1,0 +1,53 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/adminnavbar') -%>
+    
+    <div class="container">
+        <% if(!foundState.state){ %>
+            <div class="center addBtn">
+                <button class="ui primary button">Add Award</button>
+            </div>
+            <div class="ui modal text-center" id="addModal">
+                <i class="close icon"></i>
+                <div class="header">
+                    <h1 class="ui header">Add Award For Judge</h1>
+                    <form class="ui form"  action="/award/judge" method="POST">
+                        <div class="field">
+                            <input type="text" name="awardName" class="editInput" id="name" placeholder="Award Name" required>
+                        </div>
+                        <div class="actions">
+                            <button class="ui red inverted cancel button">
+                              <i class="remove icon"></i>
+                              Cancel
+                            </button>
+                            <button class="ui green ok inverted button">
+                              <i class="checkmark icon"></i>
+                              Add
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+        <div class="ui four doubling stackable cards center aligned cardForAward">
+            <% awards.forEach((award) =>{ %>
+                <% if(award.forJudge){ %>
+                    <div class="card awardsCard">  
+                        <div class="content">
+                            <a class="header"><%= award.awardName %></a>
+                        </div>
+                        <% if(ifAdmin && !foundState.state){ %>
+                        <div class="extra content">
+                            <div class="ui two buttons">
+                                <form class="formAward"action="/award/<%= award._id %>?_method=DELETE" method="POST">   
+                                    <a class="ui basic green button" href="/award/<%= award._id %>/edit">Edit</a>
+                                    <button class="ui basic red button">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                <% } %>
+            <% }) %> 
+        </div>
+    </div>
+<%- include('../partials/footer') -%>

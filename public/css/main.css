@@ -1,0 +1,316 @@
+body{
+    background-color: #fafafa !important;
+    overflow-x: hidden;
+    font-family: 'Roboto',sans-serif !important;
+}
+/* .flashMsg{
+    padding-top: 30px;
+} */
+.flashSize{
+    width: 400px;
+}
+.flashMsg .centerAlign .message{
+    margin: 0 auto;
+}
+.container.main{
+    margin-top: 3em;
+}
+.ui.form .field .editInput{
+    width: 300px;
+}
+.deleteBtn{
+    display: inline;
+}
+.center{
+    margin-top: 50px;
+    text-align: center;
+}
+.modal-dialog{
+    color: black;
+}
+i.idea{
+    font-size: 2em;
+}
+.ui.button.edit{
+    width: 100%;
+}
+#adminBtn{
+    display: inline-block;
+}
+#delete{
+    display: inline-block;
+}
+/* Navbar */
+.navbar-toggler{
+    border-style: none;
+}
+.bg-light {
+    background-color: #fff!important;
+    box-shadow: 0 3px 2px -2px rgba(0,0,0,.2);
+}
+button:focus{
+    outline: none !important;
+}
+.ui.avatar.image{
+    object-fit: cover;
+    width: 2em;
+    height: 2em;
+    display: inline;
+}
+/* REGISTER */
+.registerBtn{
+    width: 200px;
+}
+.ui.center.aligned.basic{
+    padding-top: 70px;
+    width: 80%;
+    margin: 0 auto;
+}
+.registerBoothInput{
+    margin-bottom: 0;
+}
+/* Admin Index */
+.ui.four.doubling.moveFour{
+    margin-top: 30px;
+}
+.moveFour .ui.statistic{
+    width: 100%;
+    margin-top: 20px;
+}
+.moveFIndexCard{
+    margin-top: 50px;
+}
+.ui.four.cards>.card.adminIndexCard {
+    height: 200px;
+}
+.webState{
+    color:#20d420;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.moveFour .ui.statistic .stateBtn{
+    margin-top: 20px;
+}
+
+/* Modal */
+.dimmed.dimmable > .ui.animating.dimmer, .dimmed.dimmable > .ui.visible.dimmer, .ui.active.dimmer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ui.modal,
+  .ui.active.modal {
+    margin: 0 auto!important;
+    top: auto !important;
+    left: auto !important;
+    width: 500px;
+    height: max-content;
+    transform-origin: center !important;
+    transition: all ease .5s;
+  }
+
+/* Radio Button */
+.radioIcon{
+    color: red;
+}
+.cards .card .image img.cardImg{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+.voteCardTitle{
+    text-align: center;
+    margin: 0;
+    height: 100%;
+}
+.voteCardTitle i{
+    margin: 0;
+    padding: 0;
+    font-size: large;
+}
+.voteBtn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* Edit Booth */
+.editBoothForm{
+    width: 50%;
+    margin: 0 auto;
+}
+.center.aligned.editHeader{
+    margin-bottom: 0 !important;
+    margin-top: 50px !important;
+}
+#editBtn{
+    width: 100%;
+}
+
+/* Voted Message */
+.votedImg{
+    width: 100px;
+}
+.vertical-center {
+    padding: 70px 0;
+}
+
+/* Awards Card */
+.ui.header.center{
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+}
+.awardsCard{
+    width: 50%;
+    height: 50%;
+}
+.indexContainer{
+    margin-top: 40px;
+}
+.formAward{
+    margin: 0 auto;
+}
+.ui.four.doubling.cardForAward{
+    margin-top: 20px;
+}
+
+/* winners table */
+#HTMLtoPDF .winnersTable{
+    margin: 30px auto;
+    width: 80%;
+    padding-top: 0 !important;
+}
+
+/* Login and Signup */
+form{
+    display: inline;
+}
+.centerAlign{
+    margin: 10px auto;
+}
+.form-control{
+    width: 300px;
+}
+.loginMsg{
+    margin: 20px auto;
+    text-align: center;
+}
+.loginBtn{
+    width: 100%;
+}
+.moveForm{
+    margin-top: 20px;
+}
+.downloadBtn{
+    display: inline-block;
+}
+.index .centerAlign{
+    text-align: center;
+    margin-top: 50px;
+}
+#openreader-btn{
+    margin-top: 10px;
+}
+/* Vote Via QR */
+.inputReq{
+    display: none;
+}
+
+/* Vote (Judge) */
+.radioCard{
+    display: none;
+}
+
+/* Register */
+.regHeader{
+    text-align: center;
+}
+.ui.form .field .regInput{
+    margin-bottom: 10px;
+}
+.requiredField{
+    color: red;
+}
+
+
+/* CHART */
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+}
+
+
+/* INDEX */
+.cardBody{
+    margin-top: 10px;
+}
+/* NAV */
+.dropdown-menu.dropdown-menu-right.text-center .welcomeMsg,
+.nav-link.dropdown-toggle{
+    color: black;
+}
+.logoutIcon{
+    margin-right: 10px;
+}
+
+/* ADMIN SIDE NAVBAR */
+#sidebar {
+    background: #38414a !important;
+    height: 100vh;
+    color: #fff;
+}
+
+@media (max-width: 1199px){
+    .cards .card .image img.cardImg{
+        height: 25vh;
+    }
+}
+@media (max-width: 991px){
+    .cards .card .image img.cardImg{
+        height: 35vh;
+    }
+}
+@media (max-width: 767px){    
+    .cards .card .image img.cardImg{
+        height: 50vh;
+    }
+}
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+@media (max-width: 600px){
+    .form-control{
+        width: 400px;
+    }
+    .btn{
+        width: 100%;
+    }
+    .downloadBtn{
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 480px){
+    .loginMsg{
+        font-size: 30px;
+    }
+    .form-control{
+        width: 300px;
+    }
+}
+@media (max-width: 575px){
+    .alignCard{
+        margin: 0 auto;
+    }
+}

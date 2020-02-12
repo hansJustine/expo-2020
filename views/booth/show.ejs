@@ -1,0 +1,32 @@
+<%- include('../partials/header') -%>
+<h1>Hi <%= voter.username.toUpperCase() %>!</h1>
+    <%- console.log("If Voted? "+ isUserVoted)%>
+    <% if(isUserVoted){ %>
+        <h4>Thank you for voting!</h4>
+    <% } else {%> 
+        <em><p>Max score: 100</p></em>
+        <form action="/vote/<%= boothId %>" method="POST">
+            <% criterias.forEach((criteria) => { %>
+                <div>
+                    <label for="<%= criteria.criteria %>"><%= criteria.criteria %></label>
+                    <span><%= criteria.percentage * 100 %>%</span>
+                    <input type="number" name="<%= criteria.criteria %>" max="100" min="50" required>
+                </div>
+            <% }) %>
+            <button>submit</button>
+        </form>
+        <div>
+            <em>Note: Make sure to double check your votes thoroughly, because it can't be edited.</em>
+        </div>    
+    <% } %>
+
+<% if(voter.vote.length !== 0){ %>
+    <h1><%= voter.vote[voter.vote.length - 1].average %></h1>
+<% } %>
+<p><a href="/logout">Logout</a></p>
+<% if(voter._id.equals(administrator)){ %>
+<form action="/vote/<%= boothId %>/results" method="GET">
+    <button>Who's the Winner?</button>
+</form>
+<% } %>
+<%- include('../partials/footer') -%>

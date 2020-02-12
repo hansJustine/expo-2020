@@ -1,0 +1,25 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+    <h1 class="ui header">Welcome to STI College Marikina Exposition 2020</h1>
+    <div class="row text-center alignCard" style="display: flex; flex-wrap: wrap;">
+        <% awards.forEach((award) =>{ %>
+            <% if(award.forJudge){ %>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card cardBody" style="width: 15rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= award.awardName %> Award</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <% if(!ifAdmin){ %>
+                                <a class="ui floated basic black button" href="/award/vote/<%= award._id %>">
+                                    Vote
+                                </a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }) %> 
+    </div>
+</div>
+<%- include('partials/footer') -%>

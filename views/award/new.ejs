@@ -1,0 +1,12 @@
+<%- include('../partials/header') -%>
+<div class="d-flex" id="wrapper">
+    <%- include('../partials/adminSideNav') -%>
+    <h1>Add Award</h1>
+    <form action="/award" method="POST">
+        <label for="awardName">Award</label>
+        <input type="text" name="awardName">
+        <button>Add</button>
+    </form>
+</div>
+
+<%- include('../partials/footer') -%>

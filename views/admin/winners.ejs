@@ -1,0 +1,76 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/adminnavbar') -%>
+<div class="container">
+    
+        <% if(!foundState.state){ %>
+            <form action="/adminhub/dropresult?_method=DELETE" method="POST">
+                <button class="ui primary button">Tally Again</button>
+            </form>
+        <% } %>
+    <div id="HTMLtoPDF">
+        <h1 class="ui header center aligned">Winners</h1>
+        <table class="ui very basic collapsing celled table center aligned winnersTable">
+            <thead>
+                <tr>
+                    <th>Awards</th>
+                    <th>Winner(s)</th>
+                    <th>Total Number of Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% awards.forEach((award) => { %>
+                    <tr>
+                        <td>
+                            <h4 class="ui image header">
+                                <div class="content">
+                                    <%= award.awardName %> Award
+                                </div>
+                            </h4>
+                        </td>
+                        <% global["arr" + award._id] = []
+                        results.forEach((result) =>{ 
+                            if(result.awardId.equals(award._id)){
+                                global["arr" + award._id].push(result)
+                            } 
+                        }) 
+                        
+                            global["name"+award._id] = global["arr" + award._id][0].boothName;
+                            global["id"+award._id] = global["arr" + award._id][0].boothId;
+                            global["max"+award._id] = global["arr" + award._id][0].totalScore;
+                            global["arr" + award._id].forEach((booth) => {
+                                if(booth.totalScore > global["max"+award._id]){
+                                    global["name"+award._id] = booth.boothName + "\n"
+                                    global["max"+award._id] = booth.totalScore
+                                    global["id"+award._id] = booth.boothId
+                                }
+                            })%>
+                            <% if(global["max"+award._id] === 0){ %>
+                                <td>
+                                    No Winner 
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                            <% }else{
+                                global["arr" + award._id].forEach((booth) =>{ 
+                                    if(!booth.boothId.equals(global["id"+award._id]) && global["max"+award._id] === booth.totalScore){ 
+                                        global["name"+award._id] += booth.boothName + "\n"
+                                    }          
+                                }) %>
+                                <!-- Name of Winners -->
+                                <td>
+                                    <%- global["name"+award._id].replace(/\n/g, '<br>') %>
+                                </td>
+                                <!-- Total Number of Votes -->
+                                <td>
+                                    <%= global["max"+award._id] %> 
+                                </td>
+                            <% } %>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <a href="" onclick="HTMLtoPDF()">Downlod PDF</a>
+</div>
+<%- include('../partials/footer') -%>
